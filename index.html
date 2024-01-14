@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <title>tTree.com</title>
+        <meta charset="utf-8">
+        <!--link with Css-->
+        <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+        <!--Employ Form link-->
+        <!--End link with Css-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Lobster+Two:ital@1&family=Londrina+Solid:wght@300&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Londrina+Solid:wght@300&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alata&family=Merienda:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Italianno&display=swap" rel="stylesheet">
+        <!--Bootstrap Links-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!--Counter-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    </head>
+    <body style="background-color: rgba(203, 250, 228, 0.692);">
+        <!--Nav bar start-->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand py-4" href="#">
+                <img src="./static/image/pn5.png" alt="" width="37" height="47" class="d-inline-block align-text-top">
+                tTree
+            </a>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link pr-3" href="{% url 'Home' %}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle pr-3" href="#" id="navbardrop" data-toggle="dropdown">
+                      Products</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#indoor">Indoor Plants</a>
+                      <a class="dropdown-item" href="#Outdoor">Outdoor Plants</a>
+                      <a class="dropdown-item" href="#Verticale">Verticale</a>
+                      <a class="dropdown-item" href="#Bonsai">Bonsai</a>
+                      <a class="dropdown-item" href="#Home Decore">Home Decore</a>
+                      <a class="dropdown-item" href="#Tools">Tools</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link pr-3" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pr-3" href="{% url 'Seller' %}">Seller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pr-3" href="#us">Contact Us</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link pr-3" href="{% url 'LogOut' %}">LogOut</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link pr-3" href="{% url 'Login' %}">Login</a>
+                  </li>
+                  {% endif %}
+                  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <form class="form-inline " action="/action_page.php">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                      <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                  </nav>  
+              </ul>
+            </div>
+          </nav>    
+    <!--end nav bar-->
+    <!--image slider start-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./static/image/1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="container">
+                   <div class ="row justify content-start text-left">
+                       <div class ="col-lo-8 mx-auto">
+                        <h3>Collection of Trees</h3>
+                        <h2>30% discount</h2>
+                        <h1>New Arrival</h1>
+                        <button class="btn-0 mt-3 ml-2">Buy Now</button>
+                       </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./static/image/2.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="container">
+                   <div class ="row justify content-start text-left">
+                       <div class ="col-lo-8 mx-auto">
+                        <h3>For Tree Lovers</h3>
+                        <h2>Grabs tree !!!</h2>
+                        <h1>Purchase More</h1>
+                       </div>
+                   </div>
+                </div>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./static/image/3.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+                <div class="container">
+                   <div class ="row justify content-start text-left">
+                       <div class ="col-lo-8 mx-auto">
+                        <h3>Make Money </h3>
+                        <h4>Selling Oportunity</h4>
+                        <h1>As Employee.</h1>
+                       </div>
+                   </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <br>
+      <br>
+      <br>
+    <!--image slider end-->
+    <!--img fluid start-->
+    <section class="new bg">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-7 m-auto">
+                    <div class="row text-center">
+                        <div class="col-lg-4">
+                            <img src="./static/image/g1.gif" class="img-fluid" alt="">
+                            <h6> Tools </h6>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="./static/image/g2.gif" class="img-fluid" alt="">
+                            <h6> Fruit </h6>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="./static/image/g3.gif" class="img-fluid" alt="">
+                            <h6>Flower</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--img fluid end-->
+    <!--Dummy Counter Start-->
+    <section class="counter-up">
+        <div class="content">
+            <div class="box">
+              <div class="icon"><i class="fa fa-users"></i></div>
+              <div class="counter">671</div>
+              <div class="text">Users</div>
+            </div>
+            <div class="box">
+              <div class="icon"><i class="fa fa-shopping-cart"></i></div>
+              <div class="counter">309</div>
+              <div class="text">Fast Delivary</div>
+            </div>
+            <div class="box">
+              <div class="icon"><i class="fa fa-smile-o"></i></div>
+              <div class="counter">536</div>
+              <div class="text">Happy Clients</div>
+            </div>
+            <div class="box">
+              <div class="icon"><i class="fa fa-handshake-o"></i></div>
+              <div class="counter">321</div>
+              <div class="text">Selling Oportunity</div>
+            </div>
+          </div>
+        </div>
+        <script>
+        $(document).ready(function(){
+          $('.counter').counterUp({
+            delay: 10,
+            time:1200
+          });
+        });
+        </script>
+    </section> 
+    <!--Dummy counter of-->>
+    <!--best Selling start-->
+    <section class="product">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1 class="black"> {{Item.0.categories}} </h1>
+                    <h6 style="color: rgba(0, 128, 0, 0.74)"> Always Preapare the best for YOU! </h6>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Bmonstera.jpeg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6 > {{Item.0.name}} </h6>
+                            <p> ${{Item.0.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/BminiatureCacti.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.1.name}} </h6>
+                            <p> ${{Item.1.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Bdahlia.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.2.name}} </h6>
+                            <p> ${{Item.2.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/BmaxSnier.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.3.name}} </h6>
+                            <p> ${{Item.3.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Best selling End-->
+    <!--Indoor start-->
+    <section class="product" id ="indoor">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1 class="black"> {{Item.4.categories}} </h1>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/oxalis.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.4.name}} </h6>
+                            <p> ${{Item.4.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/pleomeleplant.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.5.name}} </h6>
+                            <p> ${{Item.5.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/silverdollarplant.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.6.name}} </h6>
+                            <p> ${{Item.6.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/stringofpearls.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.7.name}} </h6>
+                            <p> ${{Item.7.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--Indoor end-->
+      <!--outdoor start-->
+    <section class="product" id="Outdoor">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1  class="black"> {{Item.8.categories}}</h1>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/mango.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.8.name}} </h6>
+                            <p> ${{Item.8.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/memoriaqltree.png" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.9.name}} </h6>
+                            <p> ${{Item.9.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/delonixpoinciana.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.10.name}} </h6>
+                            <p> ${{Item.10.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/saltree.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.11.name}} </h6>
+                            <p> ${{Item.11.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--outdoor end-->
+      <!--vertical start-->
+    <section class="product" id="Verticale">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1  class="black"> {{Item.12.categories}} </h1>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Facade.png" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.12.name}} </h6>
+                            <p> ${{Item.12.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/packs.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.13.name}} </h6>
+                            <p> ${{Item.13.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Vicinity.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.14.name}} </h6>
+                            <p> ${{Item.14.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Ilan.jpeg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.15.name}} </h6>
+                            <p> ${{Item.15.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--vertical end-->
+      <!--Bonsai start-->
+    <section class="product" id="Bonsai">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1  class="black"> {{Item.16.categories}} </h1>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/DesertRose.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.16.name}} </h6>
+                            <p> ${{Item.16.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/FicusGinseng.jpeg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.17.name}} </h6>
+                            <p> ${{Item.17.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/JadeBonsai.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.18.name}} </h6>
+                            <p> ${{Item.18.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/japanese.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.19.name}} </h6>
+                            <p> ${{Item.19.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+      <!--Bonsai end-->
+        <!--Home Decor start-->
+    <section class="product" id="Home Decore">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1 class="black"> {{Item.20.categories}} </h1>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/antho.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.20.name}} </h6>
+                            <p> ${{Item.20.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Paradise.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.21.name}} </h6>
+                            <p> ${{Item.21.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Calatheas.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.22.name}} </h6>
+                            <p> ${{Item.22.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Snake.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.23.name}} </h6>
+                            <p> ${{Item.23.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--Home Decor end-->
+     <!--Tools start-->
+    <section class="product" id="Tools">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1 class="black"> {{Item.24.categories}} </h1>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/pots.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.24.name}} </h6>
+                            <p> ${{Item.24.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Shears.jpg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.25.name}} </h6>
+                            <p> ${{Item.25.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/Spade.jpg" class="img-fluid" alt=""><hr> 
+                            <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.26.name}} </h6>
+                            <p> ${{Item.26.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center my-3">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="./static/image/wheelbarrow.jpeg" class="img-fluid" alt="">
+                            <hr> <button type="button" class="btn btn-outline-danger fas fa-thumbs-up "></i></button><hr>
+                            <h6> {{Item.27.name}} </h6>
+                            <p> ${{Item.27.price}} </p>
+                            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">Checkout more Plant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Tools end-->
+    <!--our vission start-->
+    <section class="about">
+        <div class="container py-5">
+            <div class="row py-5">
+                <div class="col-lg-8 m-auto text-center">
+                    <h1 class="black"> OUR VISION </h1>
+                    <h6 style="color: green"> Tree is helping People and the Planet </h6>
+                </div>
+            </div>
+                <div class="row py-5">
+                    <div class="col-lg-4 m-auto text-center">
+                        <img src="./static/image/H1.jpg" class="img-fluid mb-3" alt="">
+                        <h5>Make Planting A Hobby</h5>
+                        <h6>Gardening is an activity that's good for both the mind and body, and can be enjoyed by people 
+                        of all ages. Plus, you get to eat the delicious fruits, vegetables and herbs that you grow. So, 
+                        grab your tools and get in the dirt! It only takes a little bit of gardening to work up a sweat.</h6>
+                    </div>
+                    <div class="col-lg-4 m-auto text-center">
+                        <img src="./static/image/H2.jpeg" class="img-fluid mb-3" alt="">
+                        <h5>Inspire for Planting</h5>
+                        <h6>Show Them How to Start Seeds. Allow Them to Choose the Plants. Plant an Indoor Garden. 
+                        Put a Garden Where They Play. Teach Them About Transplanting. Make It Easy for Them to Access. 
+                        Teach Them the Importance of Watering Plants. Make It Part of Your Daily Routine.</h6>
+                    </div>
+                    <div class="col-lg-4 m-auto text-center">
+                        <img src="./static/image/H3.jpg" class="img-fluid mb-3" alt="">
+                        <h5>Economic Development</h5>
+                        <h6>Income opportunities and sustainable livelihoods are a key to creating lasting impact on 
+                        local environments, while accelerating self-sufficiency and community resiliency.</h6>
+                    </div>
+                </div>
+            <div class="row pt-3">
+                <div class="col-lg-6 text-center m-auto">
+                    <button class="btn1">For More Info.</button>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <!--our vission end-->
+    <!--registration start-->
+    <section class="purple py-5">
+        <div class="container text-white py-5">
+            <div class="row py-5">
+                <div class="col-lg-6 ">
+                    <h1 class="font-weight-bold py-3"> It’s hard to find things that Won't sell online So why not sell together? </h1>
+                    <h6 style="color: aliceblue;"> Register for what you love to DO </h6>
+                   <a href ="{% url 'Seller' %}"><button class="btn1 mt-3"> Register </button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--registration end-->
+    <!--contect us start-->
+    <section class="contact py-5" id="us">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 m-auto text-center">
+                    <h1 class="black"> Contact US! </h1>
+                    <h6 style="color: green"> Always be in touch with us. </h6>
+                </div>
+            </div>
+                <div class="row py-5">
+                    <div class="col-lg-9 m-auto">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <h6> LOCATION </h6>
+                                <p> Framget-1250, Dhaka, Bangladesh. </p>
+                            
+                                <h6> PHONE </h6>
+                                <p> 01765432191 </p>
+                            
+                                <h6> EMAIL </h6>
+                                <p> tTree007@gmail.com </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control bg-light" placeholder="First Name">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control bg-light" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 py-3">
+                                        <textarea name="text" class="form-control bg-light" placeholder="What do you want to say?" id="" cols="10" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <button class="btn1 mt-3"> Submit </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+     <!--contect us end-->
+     <!--join start-->
+    <section class="news py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-9 m-auto text-center">
+                    <h1 class ="join" style="color: aqua"> Join Our Plant Lover Planet </h1>
+                    <input type="text" class="px-3" placeholder="Enter Your Email.">
+                    <button class="btn2"> Submit </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-11">
+                    <div class="row"> 
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3"> CUSTOMER CARE </h5>
+                            <p > Regular </p>
+                            <p> On Time </p>
+                            <p > Always Care </p>
+                        </div>
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3"> FAQ's </h5>
+                            <p> No E-charges </p>
+                            <p> Shopping & Delivery </p>
+                            <p> Always Care </p>
+                        </div>
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3"> OUR COMPENT </h5>
+                            <p> About </p>
+                            <p> New Plant </p>
+                            <p> Product </p>
+                        </div>
+                        <div class="col-lg-3 py-3">
+                            <h5 class="pb-3"> SOCIAL MEDIA </h5>
+                            <span><i class="fab fa-facebook"></i></span>
+                            <span><i class="fab fa-instagram"></i></span>
+                            <span><i class="fab fa-twitter"></i></span>
+                            <span><i class="fab fa-google-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <hr>
+            <p class="text-center" style="color: aquamarine"> Copyright ©2021 Focus on University Projrct, UAP. All Rights Reserved.</p>
+        </div>
+    </section>
+     <!--join end-->
+    </body>
+</html>

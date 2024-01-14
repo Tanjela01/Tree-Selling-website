@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+.bg
+{
+    background: url("/static/EP.jpg")no-repeat;
+    height: 100%;
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;   
+    width: 100%;  
+}
+h1{
+    text-align: center;
+    color: rgb(20, 101, 223);
+    text-shadow:rgba(88, 69, 153, 0.945) 1px 8px 20px ;
+    font-weight: bold;
+
+}
+.Box
+{
+    background-color: #ffffffa8;
+    width: 460px;
+    border-radius: 25px;
+    padding: 17px;
+    margin-left: 35%;
+    margin-top: 50px;
+    box-shadow : rgba(36, 37, 30, 0.945) 5px 10px 20px ;
+    transform: 0.3s;
+    align-items: center;
+}
+
+.Box:hover{
+    box-shadow : rgba(22, 236, 94, 0.664) 1px 8px 20px ;
+}
+.form-group
+{
+    font-family: 'Georama', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: monospace;
+}
+.btn
+{
+    
+    border: 2px rgba(73, 73, 73, 0.384) outset;
+    background-color: rgba(49, 14, 114, 0.308);
+    width: 150px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+   font-size: 17px;
+   font-weight: bold;
+   color: rgb(0, 0, 0);
+   letter-spacing: 3px;
+   margin-left: 35%;
+  
+}
+.btn:hover
+{
+    
+    background-color:rgb(241, 13, 13);
+    color:rgb(255, 255, 255);
+    box-shadow: 3px 6px 9px rgba(0, 0, 0, 0.452);
+    
+}

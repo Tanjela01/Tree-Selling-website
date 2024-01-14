@@ -1,0 +1,301 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+}
+
+.navbar-brand {
+    font-size: 700px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Ephesis', cursive;
+}
+
+.navbar-brand:hover {
+    font-size: 50px;
+    transition: 0.5s;
+}
+
+.nav-item {
+    padding-top: 8px;
+    color: rgb(226, 235, 236);
+    font-family: 'Alata', sans-serif;
+    
+}
+.dropdown-menu
+{
+   background-color: rgba(78, 66, 66, 0.452);
+    
+}
+.dropdown-item
+{   
+    color: rgb(255, 255, 255);
+   
+}
+
+.search {
+    height: 40px;
+    width: 100%;
+    border-radius: 60px;
+    outline: none;
+    margin-right: -35px;
+    font-family: 'Alata', sans-serif;
+    border: 2px solid rgb(14, 105, 26);
+}
+.btn0{
+    height: 40px;
+    width: 40%;
+    outline: none;
+    border: none;
+    background: rgb(115, 160, 196);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+}
+.carousel-caption
+{
+    position:absolute;
+    top:45%;
+    padding-right: 40%;
+    transform: translate(-10%);  
+}
+.carousel-caption h1
+{  
+    font-size: 40px;
+    font-family: 'Rampart One', cursive;
+}
+.carousel-caption h2,h3{
+    font-family: 'Quicksand', sans-serif;
+   
+}
+.btn
+{
+    background-color: rgb(132, 209, 9);
+    font-size: 15.5px;
+    font-family: 'Alata', sans-serif; 
+}
+.btn-0
+{
+    background-color: rgb(60, 190, 60) ;
+    height: 40px;
+    width: 150px;
+    border: 2px rgba(73, 73, 73, 0.384) groove;
+    border-radius: 30px;
+    letter-spacing: 3px; 
+    font-weight: bold; 
+}
+.btn-0:hover
+{
+    background-color:rgb(5, 92, 34);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    box-shadow: 3px 6px 9px rgba(30, 145, 68, 0.521);
+}
+.h4
+{
+    font-size: 15px;
+    text-align: center;
+    color:rgb(21, 97, 19);
+    font-family: 'Alata', sans-serif;
+    font-family: 'Audiowide', cursive;
+}
+.collection span
+{
+   color: darkgreen;
+   font-weight: bold;
+   margin-left: 60px;
+   font-size: 20px;
+   
+}
+
+.btn1{
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: rgba(59, 204, 78, 0.63);
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+}
+.btn1:hover{
+    background-color: rgb(5, 80, 24) ;
+    transition: 0.5s;
+    box-shadow: -2px -1px 25px -4px rgba(21, 163, 57, 0.75);
+    -webkit-box-shadow: -2px -1px 25px -4px rgba(6, 66, 6, 0.75);
+    -moz-box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+    transition: 0.5s;
+}
+.h1{
+    font-weight: 700;
+}
+/*.product.h1{
+    font-family: 'IM Fell English SC', serif;
+    font-weight: 400;
+}*/
+.card:hover{
+    box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+    transition: 0.5s;
+}
+h6
+{
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
+p
+{
+    font-family: 'Quicksand', sans-serif;
+    color: olivedrab;
+}
+h5{
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    font-weight: bolder;
+}
+.about.h6{
+    font-family: 'Italianno', cursive;
+}
+.purple{
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(/static/paralex.jpg)no-repeat;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    font-family: 'Lobster Two', cursive;
+  
+    
+}
+.news{
+    background-color: rgb(75, 66, 66);
+    color: rgb(0, 0, 0);
+    font-family: 'Alegreya', serif;
+
+}
+.btn2{
+    height: 45px;
+    width: 100px;
+    background: rgba(52, 189, 47, 0.664);
+    border-radius: 30px;
+    margin-left: -0.1px;
+    border: 2px  rgb(92, 90, 90) none;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+   
+}
+.btn2:hover
+{
+    box-shadow: -2px -1px 25px -4px rgba(121, 221, 90, 0.75);
+    transition: 0.5s;
+}
+.news input{
+    height: 45px;
+    width: 55%;
+    border: 2px  rgb(33, 82, 8);
+    border-radius: 30px;
+    outline: none;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-top: 20px;
+    font-weight: 600;
+}
+.news input:hover
+{
+    box-shadow:  1px 8px 20px rgba(228, 202, 202, 0.75);
+    transition: 0.5s;
+}
+.news::placeholder{
+    color: rgba(0, 0, 0, 0.384);
+}
+.news p{
+    margin: 0;
+    color: black;
+}
+
+.fab{
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding-right: 5px;
+    color: rgb(0, 0, 0);
+}
+.fab:hover
+{
+   color: rgb(65, 165, 73);
+   transition: 0.5s;
+}
+.join
+{
+    color: whitesmoke;
+    font-family: 'Pangolin', cursive;
+}
+.pb-3
+{
+    color: whitesmoke;
+
+}
+.text-center
+{
+    color: rgba(245, 245, 245, 0.411);
+    
+}
+.black
+{
+    color: black;
+    font-family: 'IM Fell English SC', serif;
+    font-weight: 700;
+}
+.counter-up{
+    background: url("counter.jpg") no-repeat;
+    min-height: 50vh;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.counter-up::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+}
+.counter-up .content{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.counter-up .content .box{
+    border: 1px dashed rgba(255,255,255,0.6);
+    width: calc(25% - 30px);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
+}
+.content .box .icon{
+    font-size: 48px;
+    color: #ffffff;
+}
+.content .box .counter{
+    font-size: 50px;
+    font-weight: 500;
+    color: #f2f2f2;
+    font-family: sans-serif;
+}
+.content .box .text{
+    font-weight: 400;
+    color: #ccc ;
+}

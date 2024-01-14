@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+}
+.bg
+{
+    background: url("/static/home8.jpg")no-repeat;
+    height: 100vh;
+    background-position: 50% 50%;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;  
+    width: 100%;  
+}
+h1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    text-shadow:rgba(88, 69, 153, 0.945) 1px 8px 20px ;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+.Box
+{
+    background-color: #ffffffa8;
+    width: 400px;
+    border-radius: 25px;
+    padding: 30px;
+    margin-left: 35%;
+    margin-top: 80px;
+    box-shadow : rgba(36, 37, 30, 0.945) 5px 10px 20px ;
+    transform: 0.3s;
+    align-items: center;
+}
+
+.Box:hover{
+    box-shadow : rgb(3, 121, 255) 1px 8px 20px ;
+}
+.form-group
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: rgb(97, 97, 97) 1px 8px 10px;
+}
+
+.form-control
+{
+   font-size: 15px;
+   letter-spacing: 2px;
+   font-family: 'Karla', sans-serif;
+   font-weight: bolder;
+}
+
+.btn
+{
+    
+    border: 2px rgba(73, 73, 73, 0.384) outset;
+    background-color: rgba(49, 14, 114, 0.308);
+    width: 150px;
+    height: 40px;
+    margin-left: 28%;
+    /*margin: auto;*/
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+}
+.btn:hover
+{
+    
+    background-color:rgba(15, 128, 0, 0.541);
+    color:rgb(255, 255, 255);
+    box-shadow: 3px 6px 9px rgba(0, 0, 0, 0.452);
+    
+}
+
+.form-check-input
+{
+    
+    position: absolute;
+    top: -4px;
+    left: 15px;
+    height: 25px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+}

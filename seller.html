@@ -1,0 +1,59 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel ="stylesheet" href="{% static 'css/seller.css' %} ">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Merienda:wght@400;700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body class ="bg">
+    <div class =Box>
+        <h1 style="text-align: center; font-family: 'Acme', sans-serif;">Register As Seller.</h1>
+        <form action="" method="post">
+        {% csrf_token %}
+            <div class="form-group">
+                <i class="fa fa-user"style="position:absolute;padding-top: 9px;  padding-left: 10px;"></i>
+                <input name="sname" type="text" class="form-control" placeholder="Enter Full name" style="padding-left:10%;" required>
+            </div>
+            <div class="form-group">
+                <i class="far fa-user-circle"style="position:absolute;padding-top: 8px;  padding-left: 10px;"></i>
+                <input name="saccnum" type="text" class="form-control" placeholder="Account Number" style="padding-left:10%;" required>
+            </div>
+            <div class="form-group">
+              <i class="fa fa-phone-square "style="position:absolute;padding-top: 9px;  padding-left: 10px;"></i>
+              <input name="sphnum" type="text" class="form-control" placeholder="Phone Number" style="padding-left:10%;" required>
+          </div>
+            <div class="form-group">
+              <i class="fa fa-envelope-square"style="position:absolute;padding-top: 8px;  padding-left: 10px;"></i>
+              <input name="seml" type="email" class="form-control" placeholder="Enter Email" id="email" style="padding-left:10%;" required>
+            </div>
+            <!--<div class="form-group">
+              <label for="pwd">Password:</label>
+              <input name="spaswd" type="password" class="form-control" placeholder="Enter Password" id="pwd" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Confirm Password:</label>
+                <input type="password" class="form-control" placeholder="Enter Password" id="pwd">
+              </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> I Agree With The Terms & Conditions
+              </label>
+            </div>-->
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div> 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
